@@ -12,14 +12,3 @@ code {
     monospace;
 }
 
-.strike-through {
-  text-decoration: line-through;
-}
-
-.bold {
-  font-weight: bold;
-}
-
-.italic {
-  font-style: italic;
-}

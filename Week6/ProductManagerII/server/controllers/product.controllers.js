@@ -22,8 +22,22 @@ const oneProduct = (req,res) => {
     .catch(err => res.status(400).json(err))
 }
 
+const updateProduct = (req,res) => {
+    Product.findByIdAndUpdate({_id:req.params.id}, req.body, {new:true})
+    .then(product => res.json(product))
+    .catch(err => console.log('ERROR IN UPDATING ONE', err));
+}
+
+const deleteProduct = (req,res) => {
+    Product.deleteOne({_id:req.params.id})
+    .then(deleteProduct => res.json(deleteProduct))
+    .catch(err => res.status(400).json(err))
+}
+
 module.exports = {
     createProduct, 
     getAllProducts,
-    oneProduct
+    oneProduct, 
+    updateProduct,
+    deleteProduct
 };
